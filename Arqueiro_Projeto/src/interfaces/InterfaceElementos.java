@@ -1,4 +1,4 @@
-package comuns;
+package interfaces;
 
 public interface InterfaceElementos {
 	

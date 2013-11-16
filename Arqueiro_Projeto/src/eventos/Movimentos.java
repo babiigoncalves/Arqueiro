@@ -1,5 +1,6 @@
 package eventos;
 
+import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
 import posicao.Ponto;
@@ -13,20 +14,25 @@ public class Movimentos {
 	}
 	
 	public Ponto MovimentoArqueiro(Ponto ponto,Arqueiro arq){
-		
-		Scanner input = new Scanner(System.in);
+		EntradasDoUsuario entr = new EntradasDoUsuario();
+		//Scanner input = new Scanner(System.in);
 		int entrada;
+		
+		char teclaPressionada; 
+		
+		
 		//int teste;
 		//Cenario cenario = new Cenario();
 		Ponto teste = null;
 		//entrada.lerEntradas();
 		System.out.println("Informe o movimento");
-		entrada = input.nextInt();
+		//entrada = input.nextInt();
 		
+		entrada =  entr.lerEntradas();
 		if(entrada == 1){
 			teste = deslocamentoYup(arq);
 		}
-		if(entrada ==2){
+		if(entrada == 0){
 			teste  = deslocamentoYdown(arq);
 		}
 		

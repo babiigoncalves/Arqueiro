@@ -1,5 +1,6 @@
 package classesBasicas;
 
+import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -68,6 +69,7 @@ public class Cenario {
 	 * @param arq
 	 */
 	public void atualizarCenario(Arqueiro arq) {
+
 		for(ElementoDoJogo elemento : elementos) {
 			int entrada = input.lerEntradas();
 			elemento.atualizar(entrada);

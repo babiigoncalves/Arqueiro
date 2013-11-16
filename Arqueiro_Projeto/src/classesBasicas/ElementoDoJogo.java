@@ -1,8 +1,7 @@
 package classesBasicas;
 
-import comuns.InterfaceElementos;
-
 import imagem.Imagem;
+import interfaces.InterfaceElementos;
 import posicao.Ponto;
 
 /**
