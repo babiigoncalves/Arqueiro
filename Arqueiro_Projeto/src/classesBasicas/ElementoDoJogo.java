@@ -1,5 +1,7 @@
 package classesBasicas;
 
+import comuns.InterfaceElementos;
+
 import imagem.Imagem;
 import posicao.Ponto;
 
@@ -15,7 +17,7 @@ O arqueiro atira e alguns alvos podem atirar,outras não;
  * @author Babi
  *
  */
-public abstract class ElementoDoJogo {
+public abstract class ElementoDoJogo implements InterfaceElementos {
 	
 	private Imagem imagem;
 	private Ponto posicao;
@@ -90,8 +92,15 @@ public abstract class ElementoDoJogo {
 	*
 	*/
 	
-	public abstract char getLetrinha();
-
+	/**
+	 * Método que imprime o elemento na posição;Cada classe implementa a sua maneira este método
+	 * 
+	 */
+	//public abstract char getLetrinha();
+/**
+ * Método que atualiza a posição do elemento do jogo
+ * @param entrada
+ */
 	public void atualizar(int entrada) {}
 	
 }

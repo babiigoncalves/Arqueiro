@@ -1,11 +1,21 @@
 package eventos;
+   
+import java.awt.event.KeyEvent;    
 
-public class EntradasDoUsuario {
-	
+public class EntradasDoUsuario{
+	KeyEvent tecla;
+	int resultado;
+		  
 	public int lerEntradas(){
-		// TODO Retornar 0 se clicou para cimaou 1 se clicou para baixo 
-		// TODO KeyEvent
-		return 0;
-	}
-	
+		resultado = 0;
+		if(tecla.getKeyCode() == KeyEvent.VK_UP){
+			resultado = 1;
+		}
+		
+		if(tecla.getKeyCode() == KeyEvent.VK_DOWN){
+			resultado = 0;
+		}
+		
+		return resultado;
+	}     
 }

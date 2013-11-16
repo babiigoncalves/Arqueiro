@@ -20,17 +20,15 @@ public class Jogo {
 		Arqueiro arq = new Arqueiro();
 		Alvo alvo = new Alvo();
 		Ponto pontoAux = new Ponto();
-		//EntradasDoUsuario entrada = null;
-		Movimentos mov = new Movimentos();
+		EntradasDoUsuario ent = new EntradasDoUsuario();
+		//Movimentos mov = new Movimentos();
 		int x = 3;
 		
 		Scanner input = new Scanner(System.in);	
 		
-		String entrada;
+		int entrada = ent.lerEntradas();
 		
 	
-		
-		
 		cenario.inicializarTabuleiro();
 		arq.inicializarArqueiroNoCenario(arq);
 		alvo.inicializarAlvoNoCenario(alvo);
@@ -40,8 +38,9 @@ public class Jogo {
 		
 		while(x>0){
 		//mov.MovimentoArqueiro(arq.getPosicao(),arq);
-		pontoAux =mov.MovimentoArqueiro(arq.getPosicao(),arq);
+		//pontoAux =mov.MovimentoArqueiro(arq.getPosicao(),arq);
 		arq.setPosicao(pontoAux);
+		arq.atualizar(entrada);
 		//System.out.println("Teste nova posição "+pontoAux);
 		cenario.atualizarCenario(arq);
 		cenario.imprimirTabuleiro();

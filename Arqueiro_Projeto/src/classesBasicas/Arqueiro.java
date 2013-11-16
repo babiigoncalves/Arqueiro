@@ -2,6 +2,7 @@ package classesBasicas;
 
 import imagem.Imagem;
 import posicao.Ponto;
+import eventos.EntradasDoUsuario;
 import eventos.Movimentos;
 
 public class Arqueiro extends ElementoDoJogo {
@@ -77,7 +78,10 @@ public class Arqueiro extends ElementoDoJogo {
 	}
 	
 	public void atualizar(int entrada) {
+	/*	EntradasDoUsuario ent = new EntradasDoUsuario();
 		
+		entrada = ent.lerEntradas();
+		*/
 		switch (entrada) {
 		case 0:
 			getPosicao().setCoordenadaY( getPosicao().getCoordenadaY() - 1 );
