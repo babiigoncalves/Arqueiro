@@ -11,7 +11,9 @@ public class Cenario {
 	
 	private EntradasDoUsuario input;
 	private List<ElementoDoJogo> elementos = new LinkedList<ElementoDoJogo>();
-
+	
+	
+	
 	public void inicializarTabuleiro()
 	{
 		input = new EntradasDoUsuario();
@@ -69,7 +71,7 @@ public class Cenario {
 	 * @param arq
 	 */
 	public void atualizarCenario(Arqueiro arq) {
-
+		
 		for(ElementoDoJogo elemento : elementos) {
 			int entrada = input.lerEntradas();
 			elemento.atualizar(entrada);

@@ -5,6 +5,7 @@ import java.util.Scanner;
 import classesBasicas.Alvo;
 import classesBasicas.Arqueiro;
 import classesBasicas.Cenario;
+import classesBasicas.CenarioTeste;
 import posicao.Ponto;
 import eventos.EntradasDoUsuario;
 import eventos.Movimentos;
@@ -16,7 +17,13 @@ import eventos.Movimentos;
 public class Jogo {
 
 	public static void main(String[] args) {
-		Cenario cenario = new Cenario();
+		
+		
+		 CenarioTeste game = new CenarioTeste();
+		  game.run();
+		
+		
+	/*	Cenario cenario = new Cenario();
 		Arqueiro arq = new Arqueiro();
 		Alvo alvo = new Alvo();
 		Ponto pontoAux = new Ponto();
@@ -42,6 +49,7 @@ public class Jogo {
 		//mov.MovimentoArqueiro(arq.getPosicao(),arq);
 		pontoAux =mov.MovimentoArqueiro(arq.getPosicao(),arq);
 		arq.setPosicao(pontoAux);
+		
 		//System.out.println("Teste nova posição "+pontoAux);
 		cenario.atualizarCenario(arq);
 		cenario.imprimirTabuleiro();
@@ -51,7 +59,7 @@ public class Jogo {
 		//cenario.inicializarTabuleiro();
 		
 		//cenario.testeCenario(cenario);
-	}
+*/	}
 	
 	
 

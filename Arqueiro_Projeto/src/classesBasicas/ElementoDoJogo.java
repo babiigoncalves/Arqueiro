@@ -95,7 +95,7 @@ public abstract class ElementoDoJogo implements InterfaceElementos {
 	 * Método que imprime o elemento na posição;Cada classe implementa a sua maneira este método
 	 * 
 	 */
-	//public abstract char getLetrinha();
+	 	public abstract char getLetrinha();
 /**
  * Método que atualiza a posição do elemento do jogo
  * @param entrada

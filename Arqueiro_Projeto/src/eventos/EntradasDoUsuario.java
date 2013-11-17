@@ -2,9 +2,10 @@ package eventos;
 
 import java.awt.event.KeyListener;    
 import java.awt.event.KeyEvent;    
+import java.util.Scanner;
 
 public class EntradasDoUsuario implements KeyListener{
-	int resultado;
+	private int resultado;
 	
 	public void keyPressed(KeyEvent e){  
 	    // Não precisa de implementação, pois o KeyListener é uma interface que possui assinaturas de métodos. 
@@ -16,18 +17,28 @@ public class EntradasDoUsuario implements KeyListener{
 		// E quando se utiliza uma interface, é obrigada a implementação de todos os seus métodos. 
 	}  
 		  
-	public void keyTyped(KeyEvent e){  
-		if(e.getKeyCode() == KeyEvent.VK_UP){
-			resultado = 1;
+	public void keyTyped(char teclaPressionada){  
+		 
+		 //teclaPressionada = e.getKeyChar();
+		 
+		if(teclaPressionada == KeyEvent.VK_UP){
+			this.resultado = 1;
 		} 
 		
-		if(e.getKeyCode() == KeyEvent.VK_DOWN){
-			resultado = 0;
+		if(teclaPressionada == KeyEvent.VK_DOWN){
+			this.resultado = 0;
 		}
 	}
 	
 	public int lerEntradas(){
-		return resultado;
+		
+		return this.resultado;
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

@@ -30,19 +30,20 @@ public class Alvo extends ElementoDoJogo {
 	public int getQuantidadeAlvos() {
 		return quantidadeAlvos;
 	}
-	public void inicializarAlvoNoCenario(Alvo alvo){
+	public Ponto inicializarAlvoNoCenario(Alvo alvo){
 		//Inicializando o ponto que o arqueiro irá começar no cenário.
-		Ponto ponto = new Ponto(9, 3);
+		Ponto ponto = new Ponto(350, 500);
 		alvo.setPosicaoAlvo(ponto);
 		
 		int eixoXalvo = alvo.getPosicaoAlvo().getCoordenadaX();
 		int eixoYalvo = alvo.getPosicaoAlvo().getCoordenadaY(); 
-	
+		
+		return alvo.getPosicao();
 		//System.out.println("\tX");
 		
 	}
 	
-public Ponto PosicaoDoArqueiro(Alvo alvo){
+	public Ponto PosicaoDoArqueiro(Alvo alvo){
 		
 		alvo.inicializarAlvoNoCenario(alvo);
 		//System.out.println(arq.getPosicao());
@@ -51,12 +52,12 @@ public Ponto PosicaoDoArqueiro(Alvo alvo){
 	}
 
 @Override
-public char getLetrinha() {
+	public char getLetrinha() {
 
-	return 'X';
-}
+		return 'X';
+	}
 		
-	public void atualizar(int entrada){
+	public void atualizar(){
 		this.getPosicao().setCoordenadaY(this.getPosicao().getCoordenadaY() + 1);	
 	}
 

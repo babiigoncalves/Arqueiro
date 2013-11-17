@@ -78,10 +78,10 @@ public class Arqueiro extends ElementoDoJogo {
 	}
 	
 	public void atualizar(int entrada) {
-	/*	EntradasDoUsuario ent = new EntradasDoUsuario();
+		EntradasDoUsuario ent = new EntradasDoUsuario();
 		
 		entrada = ent.lerEntradas();
-		*/
+		
 		switch (entrada) {
 		case 0:
 			getPosicao().setCoordenadaY( getPosicao().getCoordenadaY() - 1 );
