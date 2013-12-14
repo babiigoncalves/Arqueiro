@@ -19,21 +19,24 @@ O arqueiro atira e alguns alvos podem atirar,outras não;
 public abstract class ElementoDoJogo implements InterfaceElementos {
 	
 	private Imagem imagem;
-	private Ponto posicao;
+	protected Ponto posicao;
 	
 	//protected Projetil tiro;
-	
-	private int posicaoX;
-	private int posicaoY;
 
 	
-	public ElementoDoJogo() {
+	public ElementoDoJogo()
+	{
+		this(null, new Ponto(600,500), null);
 
-		this.posicaoX = posicaoX;
-		this.posicaoY = posicaoY;
 	}
 
 	public ElementoDoJogo(Imagem imagem, Ponto posicao, Projetil tiro) {
+		//if(imagem == null || posicao == null)
+		if(posicao == null)
+		{
+			throw new NullPointerException();
+		}
+		
 		this.imagem = imagem;
 		this.posicao = posicao;
 		//this.tiro = tiro;
@@ -56,7 +59,9 @@ public abstract class ElementoDoJogo implements InterfaceElementos {
 
 
 	public void setPosicao(Ponto posicao) {
+	
 		this.posicao = posicao;
+		
 	}
 
 
@@ -80,7 +85,7 @@ public abstract class ElementoDoJogo implements InterfaceElementos {
 		
 		//elemento.getPosicao();
 	
-			//fazer uma ordenação?
+			//fazer uma ordenaï¿½ï¿½o?
 		if(elemento.getPosicao().getCoordenadaX() == 0){
 			return 1;
 		}else{
@@ -101,5 +106,15 @@ public abstract class ElementoDoJogo implements InterfaceElementos {
  * @param entrada
  */
 	public void atualizar(int entrada) {}
+	
+	
+	public boolean visivel(){
+		boolean visibilidade = true;
+		
+		if(this.getPosicao().getCoordenadaY()<1 || this.getPosicao().getCoordenadaY()> 799){
+			visibilidade = false;
+		}
+		return visibilidade;
+	}
 	
 }

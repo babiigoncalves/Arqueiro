@@ -31,7 +31,10 @@ public class Arqueiro extends ElementoDoJogo {
 	}
 
 	public void setPosicao(Ponto posicao) {
-		this.posicao = posicao;
+		
+		if(posicao.getCoordenadaY()>30 && posicao.getCoordenadaY() <550){
+			this.posicao = posicao;
+		}
 	}
 
 	public Flecha getFlechas() {
@@ -42,12 +45,12 @@ public class Arqueiro extends ElementoDoJogo {
 		this.flechas = flechas;
 	}
 	/**
-	 * Método que define a posição inicial do arqueiro no cenário.
+	 * Método que define a posição inicial do arqueiro no cenï¿½rio.
 	 * Obs.: por recomendação dos monitores este método foi implementado aqui.
 	 * @param arq
 	 */
 	public void inicializarArqueiroNoCenario(Arqueiro arq){
-		//Inicializando o ponto que o arqueiro irá começar no cenário.
+		//Inicializando o ponto que o arqueiro irï¿½ comeï¿½ar no cenï¿½rio.
 		Ponto ponto = new Ponto(0, 5);
 		arq.setPosicao(ponto);
 		
@@ -66,8 +69,9 @@ public class Arqueiro extends ElementoDoJogo {
 	public Ponto PosicaoDoArqueiro(Arqueiro arq){
 		
 		arq.inicializarArqueiroNoCenario(arq);
-		//System.out.println(arq.getPosicao());
-		return arq.getPosicao();
+	
+			return arq.getPosicao();
+		
 		
 	}
 

@@ -20,18 +20,23 @@ public class Alvo extends ElementoDoJogo {
 	}
 
 	public Ponto getPosicaoAlvo() {
-		return posicaoAlvo;
+			return posicaoAlvo;
+	
 	}
 
 	public void setPosicaoAlvo(Ponto posicaoAlvo) {
-		this.posicaoAlvo = posicaoAlvo;
+
+		//if(posicao.getCoordenadaY()>30 && posicaoAlvo.getCoordenadaY() <550){
+			this.posicaoAlvo = posicaoAlvo;
+		//}
+
 	}
 
 	public int getQuantidadeAlvos() {
 		return quantidadeAlvos;
 	}
 	public Ponto inicializarAlvoNoCenario(Alvo alvo){
-		//Inicializando o ponto que o arqueiro irá começar no cenário.
+		//Inicializando o ponto que o arqueiro irão começar no cenário.
 		Ponto ponto = new Ponto(350, 500);
 		alvo.setPosicaoAlvo(ponto);
 		
@@ -58,7 +63,11 @@ public class Alvo extends ElementoDoJogo {
 	}
 		
 	public void atualizar(){
-		this.getPosicao().setCoordenadaY(this.getPosicao().getCoordenadaY() + 1);	
+		
+		this.getPosicao().setCoordenadaY(this.getPosicao().getCoordenadaY() - 10);	
 	}
+	
+	
+	
 
 }
