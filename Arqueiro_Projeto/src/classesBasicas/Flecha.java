@@ -10,6 +10,15 @@ public class Flecha extends ElementoDoJogo {
 	private Ponto posicaoFlecha;
 
 	protected Imagem imagemFlecha;
+	private boolean novaFlecha;
+
+
+	public Flecha(int x) {
+		
+		novaFlecha = true;
+		x= posicao.getCoordenadaX();
+		
+	}
 
 	public int getQuantidade() {
 		return quantidade;

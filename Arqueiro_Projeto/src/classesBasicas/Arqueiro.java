@@ -1,5 +1,7 @@
 package classesBasicas;
 
+import java.util.ArrayList;
+
 import imagem.Imagem;
 import posicao.Ponto;
 import eventos.EntradasDoUsuario;
@@ -11,15 +13,21 @@ public class Arqueiro extends ElementoDoJogo {
 	
 	protected Ponto posicao;
 
-	private Flecha flechas;
+	//private Flecha flechas;
 	
 	protected int deslocamentoY;
+	
+	private ArrayList<Flecha> flecha;
 	
 	//O arqueiro atira e se move;
 	
 
 	public Imagem getImagemArqueiro() {
 		return imagemArqueiro;
+	}
+
+	public Arqueiro() {
+		flecha = new ArrayList();
 	}
 
 	public void setImagemArqueiro(Imagem imagemArqueiro) {
@@ -37,13 +45,15 @@ public class Arqueiro extends ElementoDoJogo {
 		}
 	}
 
-	public Flecha getFlechas() {
-		return flechas;
+
+	public ArrayList<Flecha> getFlecha() {
+		return flecha;
 	}
 
-	public void setFlechas(Flecha flechas) {
-		this.flechas = flechas;
+	public void setFlecha(ArrayList<Flecha> flecha) {
+		this.flecha = flecha;
 	}
+
 	/**
 	 * Método que define a posição inicial do arqueiro no cenário.
 	 * Obs.: por recomendação dos monitores este método foi implementado aqui.
@@ -94,6 +104,12 @@ public class Arqueiro extends ElementoDoJogo {
 		}
 		
 	}
+	
+	public void atira(){
+		 
+		 flecha.add(new Flecha(posicao.getCoordenadaX() + 20));
+		 
+		 }
 
 	
 }
