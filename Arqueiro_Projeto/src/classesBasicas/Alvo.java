@@ -26,9 +26,7 @@ public class Alvo extends ElementoDoJogo {
 
 	public void setPosicaoAlvo(Ponto posicaoAlvo) {
 
-		//if(posicao.getCoordenadaY()>30 && posicaoAlvo.getCoordenadaY() <550){
 			this.posicaoAlvo = posicaoAlvo;
-		//}
 
 	}
 
