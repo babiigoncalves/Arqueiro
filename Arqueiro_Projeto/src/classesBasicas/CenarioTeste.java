@@ -22,9 +22,11 @@ public class CenarioTeste extends JFrame implements KeyListener{
 	int janelaH = 600;
 	char teclaPressionada;
 	int xBola = 10, yBola = 300;
+	
 	Arqueiro arq = new Arqueiro();
 	Alvo alvo = new Alvo();
 	Flecha flecha = new Flecha();
+	
 
 	public Ponto PosicaoArq() {
 		Ponto ponto = new Ponto(xBola, yBola);
@@ -33,15 +35,30 @@ public class CenarioTeste extends JFrame implements KeyListener{
 		return arq.getPosicao();
 
 	}
-	
+
 	public Ponto PosicaoFlecha() {
+		
 		Ponto ponto = new Ponto(xBola,yBola);
-
+		if(flecha.getPosicao().getCoordenadaY()>30 && flecha.getPosicao().getCoordenadaY()<550){
 		this.flecha.setPosicao(ponto);
-
+		}
+	
 		return this.flecha.getPosicao();
 	}
 
+	/*public Ponto StartFlecha(){
+		
+		Ponto ponto = new Ponto(xBola,yBola);
+		this.flecha.setPosicao(ponto);
+
+			if(flecha.getPosicao().getCoordenadaY()>30 && flecha.getPosicao().getCoordenadaY()<550){
+			flecha.setPosicao(ponto);
+			}
+		
+	
+		return this.flecha.getPosicao();
+		
+	}*/
 
 	public Ponto PosicaoAlvo() {
 		Ponto ponto = new Ponto(600, 500);
@@ -117,6 +134,7 @@ public class CenarioTeste extends JFrame implements KeyListener{
 	public void atualizar() {
 		PosicaoAlvo();
 		PosicaoFlecha();
+		//StartFlecha();
 	}
 
 	public void run() {
@@ -135,6 +153,7 @@ public class CenarioTeste extends JFrame implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 
 		teclaPressionada = e.getKeyChar();
+		int x = this.flecha.getPosicao().getCoordenadaX();
 
 		if (e.getKeyCode() == e.VK_UP) {
 			yBola -= 10;
@@ -143,7 +162,10 @@ public class CenarioTeste extends JFrame implements KeyListener{
 		if (e.getKeyCode() == e.VK_DOWN) {
 			yBola += 10;
 		}
-
+		if(e.getKeyCode() == e.VK_SPACE){
+		
+		}
+	
 	}
 
 	@Override

@@ -45,12 +45,12 @@ public class Arqueiro extends ElementoDoJogo {
 		this.flechas = flechas;
 	}
 	/**
-	 * Método que define a posição inicial do arqueiro no cenï¿½rio.
+	 * Método que define a posição inicial do arqueiro no cenário.
 	 * Obs.: por recomendação dos monitores este método foi implementado aqui.
 	 * @param arq
 	 */
 	public void inicializarArqueiroNoCenario(Arqueiro arq){
-		//Inicializando o ponto que o arqueiro irï¿½ comeï¿½ar no cenï¿½rio.
+		//Inicializando o ponto que o arqueiro irá começar no cenário.
 		Ponto ponto = new Ponto(0, 5);
 		arq.setPosicao(ponto);
 		

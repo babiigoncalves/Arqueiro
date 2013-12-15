@@ -4,11 +4,11 @@ import imagem.Imagem;
 import posicao.Ponto;
 
 public class Flecha extends ElementoDoJogo {
-	
+
 	protected int quantidade = 10;
-	
+
 	private Ponto posicaoFlecha;
-	
+
 	protected Imagem imagemFlecha;
 
 	public int getQuantidade() {
@@ -20,7 +20,9 @@ public class Flecha extends ElementoDoJogo {
 	}
 
 	public void setPosicaoFlecha(Ponto posicaoFlecha) {
+		if(posicao.getCoordenadaY()>30 && posicao.getCoordenadaY() <550){
 		this.posicaoFlecha = posicaoFlecha;
+		}
 	}
 
 	public Imagem getImagemFlecha() {
@@ -33,13 +35,13 @@ public class Flecha extends ElementoDoJogo {
 
 	@Override
 	public char getLetrinha() {
-		
+
 		return '>';
 	}
-	
+
 	public void atualizar(int entrada) {
-		this.getPosicao().setCoordenadaX(this.getPosicao().getCoordenadaX() + 1);
+		this.getPosicao()
+				.setCoordenadaX(this.getPosicao().getCoordenadaX() + 1);
 	}
-	
-	
+
 }

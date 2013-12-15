@@ -4,11 +4,11 @@ import imagem.Imagem;
 import posicao.Ponto;
 
 public class Alvo extends ElementoDoJogo {
-	
+
 	private Imagem imagemAlvo;
-	
+
 	private Ponto posicaoAlvo;
-	
+
 	private int quantidadeAlvos = 3;
 
 	public Imagem getImagemAlvo() {
@@ -20,52 +20,51 @@ public class Alvo extends ElementoDoJogo {
 	}
 
 	public Ponto getPosicaoAlvo() {
-			return posicaoAlvo;
-	
+		return posicaoAlvo;
+
 	}
 
 	public void setPosicaoAlvo(Ponto posicaoAlvo) {
 
-			this.posicaoAlvo = posicaoAlvo;
+		this.posicaoAlvo = posicaoAlvo;
 
 	}
 
 	public int getQuantidadeAlvos() {
 		return quantidadeAlvos;
 	}
-	public Ponto inicializarAlvoNoCenario(Alvo alvo){
-		//Inicializando o ponto que o arqueiro irão começar no cenário.
+
+	public Ponto inicializarAlvoNoCenario(Alvo alvo) {
+		// Inicializando o ponto que o arqueiro irão começar no cenário.
 		Ponto ponto = new Ponto(350, 500);
 		alvo.setPosicaoAlvo(ponto);
-		
+
 		int eixoXalvo = alvo.getPosicaoAlvo().getCoordenadaX();
-		int eixoYalvo = alvo.getPosicaoAlvo().getCoordenadaY(); 
-		
+		int eixoYalvo = alvo.getPosicaoAlvo().getCoordenadaY();
+
 		return alvo.getPosicao();
-		//System.out.println("\tX");
-		
-	}
-	
-	public Ponto PosicaoDoArqueiro(Alvo alvo){
-		
-		alvo.inicializarAlvoNoCenario(alvo);
-		//System.out.println(arq.getPosicao());
-		return alvo.getPosicaoAlvo();
-		
+		// System.out.println("\tX");
+
 	}
 
-@Override
+	public Ponto PosicaoDoArqueiro(Alvo alvo) {
+
+		alvo.inicializarAlvoNoCenario(alvo);
+		// System.out.println(arq.getPosicao());
+		return alvo.getPosicaoAlvo();
+
+	}
+
+	@Override
 	public char getLetrinha() {
 
 		return 'X';
 	}
-		
-	public void atualizar(){
-		
-		this.getPosicao().setCoordenadaY(this.getPosicao().getCoordenadaY() - 10);	
+
+	public void atualizar() {
+
+		this.getPosicao().setCoordenadaY(
+				this.getPosicao().getCoordenadaY() - 10);
 	}
-	
-	
-	
 
 }
